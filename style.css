@@ -48,3 +48,38 @@
     color: rgb(207, 15, 237);
     transform: scale(1.2);
 }
+
+ .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 116%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* ✅ First image shows immediately */
+.slide.active {
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* dark overlay on top */
+    z-index: 1;
+}
