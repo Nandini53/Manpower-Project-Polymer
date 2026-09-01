@@ -26,9 +26,13 @@
 
     <!-- Social Media Icons -->
     <div class="social-icons">
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-skype"></i>
+         <a href="https://www.facebook.com/profile.php?id=100063938559816" target="_blank">
+        <i class="fa-brands fa-facebook"></i></a>
+        <a href="https://x.com/sanju14534" target="_blank">
+        <i class="fa-brands fa-twitter"></i></a>
+         <a href="http://webmail.manpowerprojects.com:2095/" target="_blank">
+        <i class="fa-regular fa-envelope"></i></a>
+    </a>
     </div>
 
 </nav>
@@ -63,49 +67,53 @@
     <div class="container" id="contact-form">
         <h2 class="section-title">Drop Your Message</h2>
 
-        <form class="contact-form">
-            <div class="form-left">
+       <form class="contact-form" id="contactForm">
 
-                <div class="form-group">
-                    <label>Name <span>*</span></label>
-                    <input type="text" placeholder="Enter your name" required>
-                </div>
+    <div class="form-left">
 
-                <div class="form-group">
-                    <label>Email <span>*</span></label>
-                    <input type="email" placeholder="Enter your email" required>
-                </div>
+        <div class="form-group">
+            <label>Name <span>*</span></label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
 
-                <div class="form-group">
-                    <label>Phone</label>
-                    <input type="tel" placeholder="Enter your phone">
-                </div>
+        <div class="form-group">
+            <label>Email <span>*</span></label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
 
-                <div class="form-group">
-                    <label>Company Name</label>
-                    <input type="text" placeholder="Company Name">
-                </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" id="phone" placeholder="Enter your phone">
+        </div>
 
-            </div>
+        <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" id="company" placeholder="Company Name">
+        </div>
 
-            <div class="form-right">
+    </div>
 
-                <div class="form-group">
-                    <label>Subject <span>*</span></label>
-                    <input type="text" placeholder="Subject" required>
-                </div>
+    <div class="form-right">
 
-                <div class="form-group">
-                    <label>Message <span>*</span></label>
-                    <textarea placeholder="Write your message..." required></textarea>
-                </div>
+        <div class="form-group">
+            <label>Subject <span>*</span></label>
+            <input type="text" id="subject" placeholder="Subject" required>
+        </div>
 
-                <button type="submit" class="submit-btn">
-                    Submit Message
-                </button>
+        <div class="form-group">
+            <label>Message <span>*</span></label>
+            <textarea id="message" placeholder="Write your message..." required></textarea>
+        </div>
 
-            </div>
-        </form>
+        <button type="submit" class="submit-btn">
+            Submit Message
+        </button>
+
+    </div>
+
+</form>
+
+        
     </div>
 </section>
     </main>
@@ -119,14 +127,90 @@
 
     <div class="footer-right">
 
-        <a href="index.html">Home</a>
+        <li><a href="index.html">Home</a></li>
 
-        <a href="about.html">About Us</a>
+        <li><a href="about.html">About</a></li>
 
-        <a href="contact.html">Contact</a>
+        <li><a href="services.html">Services</a></li>
+
+        <li><a href="projects.html">Projects</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
 
     </div>
 
 </footer>
+<script src="contact.js"></script>
+<!-- CHATBOT -->
+
+<div class="chatbot-container">
+
+    <!-- Chat Button -->
+    <button class="chatbot-button" id="chatbotButton">
+        <i class="fa-solid fa-comments"></i>
+        <span class="chat-tooltip">How can we help you?</span>
+    </button>
+
+    <!-- Chat Window -->
+    <div class="chatbot-box" id="chatbotBox">
+
+        <div class="chatbot-header">
+            <div>
+                <h3>Manpower Projects & Polymer</h3>
+                <p><span class="online-dot"></span> We're online</p>
+            </div>
+
+            <button id="closeChat">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="chatbot-body" id="chatbotBody">
+
+            <div class="bot-message">
+                👋 Hello! How can we help you today?
+            </div>
+
+            <div class="quick-options">
+
+                <button onclick="botReply('services')">
+                    Our Services
+                </button>
+
+                <button onclick="botReply('projects')">
+                    Our Projects
+                </button>
+
+                <button onclick="botReply('quote')">
+                    Request a Quote
+                </button>
+
+                <button onclick="botReply('contact')">
+                    Contact Us
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="chatbot-input">
+
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="Type your message..."
+            >
+
+            <button onclick="sendMessage()">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="chatbot.js"></script>
 </body>
 </html>
